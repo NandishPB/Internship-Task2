@@ -1,0 +1,120 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Regstration Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #50a0a0;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0vh;
+            display: flex;
+        }
+
+        form {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 40px 8px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        lable {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="number"],
+        input[type="file"]{
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .form-group {
+            text-align: left;
+            width: 100%;
+        }
+
+        button {
+            background-color: #5cb85c;
+            color: white;
+            border-radius: 5px;
+            margin: 10px;
+            padding: 10px 20px;
+            transition: background-color 0.3s;
+            text-align: start;
+        }
+
+        button:hover {
+            background-color: #4cae4c;
+        }
+
+        legend{
+            font-weight:bold;
+            color:#555;
+            /* padding:10px; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">  
+        <form action="/submit" method="post">
+            <h1>Register Your details</h1>
+            <div class="form-group">
+                <lable for="name">Name</lable>
+                <input type="text" id="name" name="name">
+            </div>
+            <div class="form-group">
+                <lable for="email">Email</lable>
+                <input type="text" id="email" name="email">
+            </div>
+            <div class="form-group">
+                <lable for="age">Age</lable>
+                <input type="number" id="age" min="1" max="120" name="age">
+            </div>
+            <div class="form-group">
+                <lable for="gender">Gender</lable>
+                <select id="gender" name="gender">
+                    <option value=" ">select</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option vlaue="other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <lable for="picture">Photo</lable>
+                <input type="file" id="picture" name="picture">
+            </div>
+            <button type="submit">submit</button>
+        </form>
+    </div>
+    </div>
+
+</body>
+
+</html>
