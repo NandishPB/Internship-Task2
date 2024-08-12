@@ -2,12 +2,14 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
 const port = 3002;
+const formData = [];
 
 app.set('view engine','ejs');
 
 app.use(bodyParser.urlencoded({extended:true}));
 
 app.use(express.static('public'));
+
 
 app.get('/', (req, res) => {
     res.render('index');
@@ -16,10 +18,10 @@ app.get('/', (req, res) => {
 app.post('/submit',(req, res) => {
     const{name,email,age,gender,picture} = req.body;
     //server side validation
-    console.log(name)
-    console.log(email)
-    console.log(age)
-    console.log(gender)
+    // console.log(name)
+    // console.log(email)
+    // console.log(age)
+    // console.log(gender)
     if(!name || !email || !age) {
         console.log('Please check all fields once')
         return res.status(400).send(`<!DOCTYPE html>
@@ -120,6 +122,11 @@ app.post('/submit',(req, res) => {
         </body>
         </html>`)
     }
+
+    // Store the data in the array 
+    formData.push({ name, email , age, gender});
+    console.log(formData);
+
     res.send(`<!DOCTYPE html>
         <html lang="en">
         <head>
